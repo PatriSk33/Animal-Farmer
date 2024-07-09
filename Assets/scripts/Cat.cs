@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Cat class inheriting from Animal
-public class Cat : Animal
+public class Cat : Animal   // INHERITANCE
 {
 
     private void Start()
@@ -15,12 +15,14 @@ public class Cat : Animal
         AnimalName = gameObject.name;
     }
 
-    public override void MakeSound()
+    // POLYMORPHISM: overriding MakeSound method
+    public override void MakeSound() // POLYMORPHISM
     {
         Debug.Log("Meow!");
     }
 
-    public override void Move()
+    // POLYMORPHISM: overriding Move method
+    public override void Move() // POLYMORPHISM
     {
         base.Move();
         Debug.Log(AnimalName + " is sneaking.");

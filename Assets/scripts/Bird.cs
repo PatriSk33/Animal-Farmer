@@ -7,19 +7,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Bird class inheriting from Animal
-public class Bird : Animal
+public class Bird : Animal  // INHERITANCE
 {
     private void Start()
     {
         AnimalName = gameObject.name;
     }
 
-    public override void MakeSound()
+    // POLYMORPHISM: overriding MakeSound method
+    public override void MakeSound() // POLYMORPHISM
     {
         Debug.Log("Tweet!");
     }
 
-    public override void Move()
+    // POLYMORPHISM: overriding Move method
+    public override void Move() // POLYMORPHISM
     {
         base.Move();
         Debug.Log(AnimalName + " is flying.");

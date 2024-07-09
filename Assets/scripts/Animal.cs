@@ -1,32 +1,33 @@
-/* 
-    ------------------- PatriSk33 -------------------
- */
-
-using System.Collections;
-using System.Collections.Generic;
+// Base Animal class
 using UnityEngine;
 
-// Base Animal class
 public abstract class Animal : MonoBehaviour
 {
-    private string animalName;
+    private string animalName; // ENCAPSULATION
+
     public float speed = 2f;
 
-    // Encapsulation: property to get and set the animal name
+    // ENCAPSULATION: property to get and set the animal name
     public string AnimalName
     {
         get { return animalName; }
         set { animalName = value; }
     }
 
-    // Abstract method to be implemented by derived classes
-    public abstract void MakeSound();
+    // ABSTRACTION: abstract method to be implemented by derived classes
+    public abstract void MakeSound(); // ABSTRACTION
 
-    public virtual void Move()
+    // ABSTRACTION: higher-level method that abstracts unnecessary details
+    public virtual void Move() // ABSTRACTION
     {
-        // Random movement logic
-        Vector2 direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+        Vector2 direction = GetRandomDirection();
         transform.Translate(direction * speed * Time.deltaTime);
+    }
+
+    // ABSTRACTION: higher-level method to generate a random direction
+    protected Vector2 GetRandomDirection() // ABSTRACTION
+    {
+        return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
 
     // Update is called once per frame

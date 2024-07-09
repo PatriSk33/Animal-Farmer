@@ -31,8 +31,10 @@ public class PlayerController : MonoBehaviour
             Animal animal = collider.GetComponent<Animal>();
             if (animal != null)
             {
-                animal.MakeSound();
+                animal.MakeSound(); // POLYMORPHISM
+
                 interactionText.text = animal.AnimalName + " says: ";
+
                 // Set text to display the sound
                 if (animal is Dog) interactionText.text += "Woof!";
                 if (animal is Cat) interactionText.text += "Meow!";
