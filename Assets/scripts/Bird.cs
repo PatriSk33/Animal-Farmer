@@ -9,6 +9,11 @@ using UnityEngine;
 // Bird class inheriting from Animal
 public class Bird : Animal
 {
+    private void Start()
+    {
+        AnimalName = gameObject.name;
+    }
+
     public override void MakeSound()
     {
         Debug.Log("Tweet!");

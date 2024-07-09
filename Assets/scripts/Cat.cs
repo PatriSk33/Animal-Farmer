@@ -9,6 +9,12 @@ using UnityEngine;
 // Cat class inheriting from Animal
 public class Cat : Animal
 {
+
+    private void Start()
+    {
+        AnimalName = gameObject.name;
+    }
+
     public override void MakeSound()
     {
         Debug.Log("Meow!");
